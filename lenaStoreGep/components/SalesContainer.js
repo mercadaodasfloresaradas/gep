@@ -55,6 +55,7 @@ export default class SalesContainer extends Component {
       this.setState({
         forceUpdate: this.props.forceUpdate,
         type: this.props.type,
+        sales:[],
       }, ()=>{
         this.updateByType(true);
       });

@@ -253,7 +253,7 @@ export default class NewProduct extends Component {
                                 onChangeText={value => {
 
                                     this.setState({
-                                            price: value ? value.match(/(\d|,)+/g).pop() : '',
+                                            price: value && value.match(/(\d|,)+/g) ? value.match(/(\d|,)+/g).pop() : '',
                                         });
                                     }}
                                 style={styles.priceSize}

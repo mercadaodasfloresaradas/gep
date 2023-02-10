@@ -147,12 +147,12 @@ export default class Configs extends Component {
                 {/* basket */}
                 <Text>Limite Productos no cesto de Compras</Text>
                 <TextInput placeholder="20"
-                    onChangeText={(val)=>this.setState({limitProducts: val})}
+                    onChangeText={(val)=>this.setState({limitProducts: val && val.match(/(\d|,)+/g) ? val.match(/(\d|,)+/g).pop() : ''})}
                     value={this.state.limitProducts}
                 />
                 <Text>Limite Compras por dia por Cliente</Text>
                 <TextInput placeholder="5"
-                    onChangeText={(val)=>this.setState({limitDaily: val})}
+                    onChangeText={(val)=>this.setState({limitDaily: val && val.match(/(\d|,)+/g) ? val.match(/(\d|,)+/g).pop() : ''})}
                     value={this.state.limitDaily}
                 />
                 {/* placed order */}
